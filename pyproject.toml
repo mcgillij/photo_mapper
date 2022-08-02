@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "photomapper"
+version = "0.1.0"
+description = "Photo Mapper using GPS data"
+authors = ["mcgillij <mcgillivray.jason@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+folium = "^0.12.1"
+pandas = "^1.4.3"
+matplotlib = "^3.5.2"
+Pillow = "^9.2.0"
+exif = "^1.3.5"
+
+[tool.poetry.dev-dependencies]
+nbdev = "^2.0.7"
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
