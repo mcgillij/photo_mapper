@@ -206,7 +206,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "execnb"
-version = "0.0.9"
+version = "0.0.10"
 description = "A description of your project"
 category = "dev"
 optional = false
@@ -240,7 +240,7 @@ plum-py = ">=0.5.0,<2.0.0"
 
 [[package]]
 name = "fastcore"
-version = "1.5.13"
+version = "1.5.14"
 description = "Python supercharged for fastai development"
 category = "dev"
 optional = false
@@ -442,7 +442,7 @@ i18n = ["Babel (>=2.7)"]
 
 [[package]]
 name = "jsonschema"
-version = "4.9.0"
+version = "4.9.1"
 description = "An implementation of JSON Schema validation for Python"
 category = "dev"
 optional = false
@@ -649,7 +649,7 @@ webpdf = ["pyppeteer (>=1,<1.1)"]
 
 [[package]]
 name = "nbdev"
-version = "2.0.7"
+version = "2.1.1"
 description = "Create delightful software with Jupyter Notebooks"
 category = "dev"
 optional = false
@@ -658,11 +658,11 @@ python-versions = ">=3.7"
 [package.dependencies]
 astunparse = "*"
 execnb = "*"
-fastcore = ">=1.5.11"
+fastcore = ">=1.5.14"
 ghapi = "*"
 
 [package.extras]
-dev = ["nbdev-numpy", "nbdev-stdlib", "pandas", "matplotlib", "ipython", "black", "ghapi"]
+dev = ["black", "matplotlib", "pandas", "nbdev-stdlib", "nbdev-numpy"]
 
 [[package]]
 name = "nbformat"
