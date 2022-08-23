@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "photomapper.html",
+    "href": "photomapper.html",
+    "title": "PhotoMapper",
+    "section": "",
+    "text": "make_dataframe\n\n make_dataframe (resources:dict)\n\n\n\n\nprocess_thumbnails\n\n process_thumbnails (resources:dict, thumbnail_path:pathlib.Path)\n\nProcesses the thumbnails, and updates the resource dict with thumb location\n\n\n\nmake_image_thumb\n\n make_image_thumb (image:exif._image.Image, thumbnail_path:pathlib.Path)\n\nmakes thumbnails if they aren’t created already or returns the path\n\n\n\nget_gps_data_from_images\n\n get_gps_data_from_images (image_path:pathlib.Path,\n                           image_extension:str='*.jpg')\n\nCreate a dictionary of gps data from images in a directory. Returns: dict[str, dict]: A dictionary with filename as the key and a value of a dictionary if the format: { ‘coordinates’: tuple[float, …], ‘timestamp’: str }\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nimage_path\nPath\n\n“Path object”\n\n\nimage_extension\nstr\n*.jpg\nimage extensions glob\n\n\nReturns\ndict\n\n\n\n\n\n\n\n\nget_caption_from_exif\n\n get_caption_from_exif (exif_data:exif._image.Image)\n\nGet caption data from exif and convert to a string. Returns: str: caption\n\n\n\n\nType\nDetails\n\n\n\n\nexif_data\nImage\ntakes an Exif Image\n\n\nReturns\nstr\n\n\n\n\n\n\n\nget_decimal_coord_from_exif\n\n get_decimal_coord_from_exif (exif_data:exif._image.Image)\n\nGet coordinate data from exif and convert to a tuple of decimal latitude, longitude and altitude. Returns: tuple[float, float, float]: A tuple of decimal coordinates (lat, lon, alt)\n\n\n\n\nType\nDetails\n\n\n\n\nexif_data\nImage\ntakes an Exif Image\n\n\nReturns\ntuple\n\n\n\n\n\n\n\ncoords_to_decimal\n\n coords_to_decimal (coords:tuple[float,float], ref:str)\n\nCovert a tuple of coordinates in the format (degrees, minutes, seconds) and a reference to a decimal representation.\nReturns: float: A signed float of decimal representation of the coordinate.\n\n\n\n\nType\nDetails\n\n\n\n\ncoords\ntuple\n(45.5454545, -115.12312312)\n\n\nref\nstr\n“N”, “S”, “E”, “W”\n\n\nReturns\nfloat\n\n\n\n\n\nimage_path = Path(\"output\")\nresources = get_gps_data_from_images(image_path)\ndf = make_dataframe(resources)\ndf\nassert len(df) 1\n\nPhoto MVIMG_20181126_132952-EFFECTS.jpg does not contain datetime information.\nPhoto MVIMG_20181129_163040-EFFECTS.jpg does not contain datetime information.\nPhoto MVIMG_20181126_101454-EFFECTS-edited.jpg does not contain datetime information.\nPhoto MVIMG_20181126_101454-EFFECTS.jpg does not contain datetime information.\nPhoto MVIMG_20181126_132952-EFFECTS-edited.jpg does not contain datetime information.\nPhoto MVIMG_20181129_163040-EFFECTS-edited.jpg does not contain datetime information.\nPhoto IMG_20181127_080204-EFFECTS.jpg does not contain datetime information.\nPhoto IMG_20181127_080204-EFFECTS-edited.jpg does not contain datetime information.\n\n\n124\n\n\nColors need to be converted to hex to work with folium\n\n\n\nrgba_to_hex\n\n rgba_to_hex (rgba:tuple[float,...])\n\nmaybe nab some text from exif to be able to populate some text in here\n\n\n\ngenerate_map\n\n generate_map (df:pandas.core.frame.DataFrame)\n\n\n\n\nmake_html\n\n make_html (image:pathlib.Path, thumbnail:pathlib.Path, caption:str)\n\nStitching all the pieces together, we take as inputs a path to images, and a path to our thumbnails folder, and we get a map return\n\n\n\nprocess_images_into_map\n\n process_images_into_map (image_path:pathlib.Path,\n                          thumbnail_path:pathlib.Path)\n\n\nimage_path = Path(\"output\")\nthumbnail_path = Path(\"thumbnails\")\nm = process_images_into_map(image_path, thumbnail_path)\n\nPhoto MVIMG_20181126_132952-EFFECTS.jpg does not contain datetime information.\nPhoto MVIMG_20181129_163040-EFFECTS.jpg does not contain datetime information.\nPhoto MVIMG_20181126_101454-EFFECTS-edited.jpg does not contain datetime information.\nPhoto MVIMG_20181126_101454-EFFECTS.jpg does not contain datetime information.\nPhoto MVIMG_20181126_132952-EFFECTS-edited.jpg does not contain datetime information.\nPhoto MVIMG_20181129_163040-EFFECTS-edited.jpg does not contain datetime information.\nPhoto IMG_20181127_080204-EFFECTS.jpg does not contain datetime information.\nPhoto IMG_20181127_080204-EFFECTS-edited.jpg does not contain datetime information.\n\n\n\nm\n\nMake this Notebook Trusted to load map: File -> Trust Notebook\n\n\n\nfrom nbdev import nbdev_export\nnbdev_export()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project name here",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "Project name here",
+    "section": "Install",
+    "text": "Install\npip install your_project_name"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "Project name here",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2"
+  }
+]
